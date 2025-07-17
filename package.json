@@ -1,0 +1,16 @@
+{
+  "name": "permacommons-website",
+  "version": "1.0.0",
+  "description": "Permacommons website built with Eleventy",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "dev": "eleventy --serve --watch"
+  },
+  "keywords": ["eleventy", "permacommons", "static-site"],
+  "author": "Permacommons",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

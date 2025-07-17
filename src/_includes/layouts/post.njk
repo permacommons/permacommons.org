@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="blog-container">
+  <header class="text-center mb-8">
+    <h1 class="blog-title">{{ title }}</h1>
+    <div class="blog-post-meta" style="justify-content: center; margin-bottom: 2rem;">
+      <time datetime="{{ date | dateIso }}">{{ date | readableDate }}</time>
+      {%- if author -%}
+      <span>•</span>
+      <span>{{ author }}</span>
+      {%- endif -%}
+    </div>
+    {%- if description -%}
+    <p class="section-subtitle">{{ description }}</p>
+    {%- endif -%}
+  </header>
+  
+  <div class="content-card" style="max-width: none;">
+    {{ content | safe }}
+  </div>
+</article>

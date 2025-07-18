@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or 'Permacommons - Minding the Future' }}</title>
     <meta name="description" content="{{ description or 'Building a permanent home for useful shared resources maintained with AI assistance' }}">
+    
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="{{ title or 'Permacommons - Minding the Future' }}">
+    <meta property="og:description" content="{{ description or 'Building a permanent home for useful shared resources maintained with AI assistance' }}">
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:url" content="https://permacommons.org{{ page.url or '/' }}">
+    <meta property="og:image" content="https://permacommons.org/logo.png">
+    <meta property="og:image:alt" content="Permacommons logo">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Permacommons">
+    <meta property="og:locale" content="en_US">
+    {%- if ogType == 'article' -%}
+    <meta property="article:published_time" content="{{ date | dateIso }}">
+    {%- if author -%}
+    <meta property="article:author" content="{{ author }}">
+    {%- endif -%}
+    <meta property="article:section" content="Blog">
+    {%- if tags -%}
+    {%- for tag in tags -%}
+    <meta property="article:tag" content="{{ tag }}">
+    {%- endfor -%}
+    {%- endif -%}
+    {%- endif -%}
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title or 'Permacommons - Minding the Future' }}">
+    <meta name="twitter:description" content="{{ description or 'Building a permanent home for useful shared resources maintained with AI assistance' }}">
+    <meta name="twitter:image" content="https://permacommons.org/logo.png">
+    <meta name="twitter:image:alt" content="Permacommons logo">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="author" content="Permacommons">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://permacommons.org{{ page.url or '/' }}">
+    
     <link rel="stylesheet" href="/fonts/inter.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>

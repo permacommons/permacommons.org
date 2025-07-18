@@ -114,7 +114,7 @@ Create new pages in `src/` as `.njk` files with front matter.
 
 We welcome contributions that align with our principles. Please read [AGENTS.md](AGENTS.md) for detailed guidelines on accessibility, progressive enhancement, privacy, and design standards.
 
-This website embodies the same principles that guide all Permacommons projects—it works without JavaScript, prioritizes accessibility, minimizes external dependencies, and maintains high aesthetic standards.
+This website works without JavaScript, prioritizes accessibility, minimizes external dependencies, and maintains high aesthetic standards.
 
 ## License
 

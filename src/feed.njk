@@ -1,0 +1,27 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title or "Permacommons Blog" }}</title>
+  <subtitle>{{ metadata.description or "Building a permanent home for useful shared resources maintained with AI assistance" }}</subtitle>
+  <link href="{{ metadata.url or "https://permacommons.org" }}/feed.xml" rel="self"/>
+  <link href="{{ metadata.url or "https://permacommons.org" }}/"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url or "https://permacommons.org" }}/</id>
+  <author>
+    <name>{{ metadata.author.name or "Permacommons" }}</name>
+    <email>{{ metadata.author.email or "info@permacommons.org" }}</email>
+  </author>
+  {%- for post in collections.posts | reverse %}
+  {%- set absolutePostUrl %}{{ metadata.url or "https://permacommons.org" }}{{ post.url }}{% endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

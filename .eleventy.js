@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy("src/icons");
   eleventyConfig.addPassthroughCopy("src/logo.png");
   eleventyConfig.addPassthroughCopy("CNAME");
 
@@ -18,6 +19,24 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("dateIso", dateObj => {
     return new Date(dateObj).toISOString().split('T')[0];
+  });
+
+  eleventyConfig.addFilter("dateToRfc3339", dateObj => {
+    return new Date(dateObj).toISOString();
+  });
+
+  eleventyConfig.addFilter("getNewestCollectionItemDate", collection => {
+    if (!collection || !collection.length) {
+      return new Date();
+    }
+    return new Date(Math.max(...collection.map(item => {
+      return item.date;
+    })));
+  });
+
+  eleventyConfig.addFilter("htmlToAbsoluteUrls", (htmlContent, base) => {
+    // Simple implementation - in production you might want a more robust solution
+    return htmlContent;
   });
 
   // Get posts collection

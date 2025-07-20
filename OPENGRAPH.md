@@ -23,7 +23,7 @@ The base layout includes:
 #### Website Pages (Default)
 - `og:type`: "website"
 - Uses site-wide defaults for title and description
-- Logo image for social sharing
+- OpenGraph banner image for social sharing
 
 #### Blog Posts
 - `og:type`: "article" (set in post layout)
@@ -87,7 +87,7 @@ To add custom images for specific posts, you can extend the implementation by:
 2. Updating the base layout to use custom images when available:
 
 ```html
-<meta property="og:image" content="https://permacommons.org{{ image or '/logo.png' }}">
+<meta property="og:image" content="https://permacommons.org{{ image or '/images/opengraph-banner.jpg' }}">
 ```
 
 ## Testing

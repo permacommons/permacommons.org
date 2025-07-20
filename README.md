@@ -45,7 +45,9 @@ permacommons.org/
 │   ├── posts/              # Blog posts (Markdown)
 │   ├── blog.njk            # Blog index page
 │   ├── index.njk           # Homepage
-│   └── logo.png            # Site logo
+│   └── images/             # Image assets
+│       ├── logo.png        # Site logo
+│       └── opengraph-banner.jpg # Social media banner
 ├── _site/                  # Generated static site
 ├── .eleventy.js            # Eleventy configuration
 ├── package.json            # Dependencies and scripts

@@ -841,6 +841,116 @@ a:hover {
   }
 }
 
+/* FAQ Page Specific Styles */
+.faq-page {
+  padding-top: 6rem;
+  margin-top: 4rem;
+}
+
+.faq-page .section-title {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.faq-page .section-subtitle {
+  font-size: 1.25rem;
+  color: #718096;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* FAQ Content Styling */
+.faq-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-content h2 {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #3182ce;
+  position: relative;
+}
+
+.faq-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.faq-content h2::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.faq-content h3 {
+  font-size: 1.375rem;
+  color: #2d3748;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0 0.5rem;
+  border-left: 4px solid #3182ce;
+  padding-left: 2.5rem;
+  background: linear-gradient(90deg, rgba(49, 130, 206, 0.05) 0%, transparent 100%);
+  position: relative;
+}
+
+.faq-content h3::before {
+  content: 'Q:';
+  position: absolute;
+  left: -4px;
+  top: 1rem;
+  background: #3182ce;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  line-height: 1;
+}
+
+.faq-content h3 + p {
+  margin-top: 0.75rem;
+  padding-left: 2.5rem;
+  border-left: 4px solid #e2e8f0;
+  background: rgba(247, 250, 252, 0.5);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.faq-content h3 + p::before {
+  content: 'A:';
+  position: absolute;
+  left: -4px;
+  top: 1rem;
+  background: #48bb78;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  line-height: 1;
+}
+
+.faq-content hr {
+  margin: 4rem 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #e2e8f0 20%, #e2e8f0 80%, transparent 100%);
+}
+
 /* Utility Classes */
 .text-center {
   text-align: center;

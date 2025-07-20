@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="content-section faq-page">
+  <div class="container">
+    <div class="section-header">
+      <h1 class="section-title">{{ title or 'Frequently Asked Questions' }}</h1>
+      <p class="section-subtitle">{{ description or 'Common questions and answers' }}</p>
+    </div>
+    
+    <div class="content-grid">
+      <div class="content-card faq-content">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</section>

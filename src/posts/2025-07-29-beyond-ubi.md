@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "Beyond UBI: Inching towards post-scarcity"
-description: "A permanent commons as an alternative to hoping for Universal Basic Income"
+description: "A permanent commons as an alternative to (hoping for) Universal Basic Income"
 date: 2025-07-29
 author: "Permacommons Team"
 tags: ["ubi", "open source"]

@@ -26,7 +26,7 @@ Quality is our top priority. We maintain human oversight for all critical decisi
 
 ### What about security concerns with AI-generated code?
 
-Security is paramount. We implement rigorous review processes, automated security scanning, and maintain human oversight for all security-critical components. AI assists with routine tasks and documentation, but security decisions always involve human expertise.
+We implement rigorous review processes, automated security scanning, and maintain human oversight for all security-critical components. AI assists with routine tasks and documentation, but security decisions always involve human expertise.
 
 ### How do you handle AI hallucinations or errors?
 
@@ -54,7 +54,11 @@ We're starting with simple tools and scripts, learning as we go. As AI technolog
 
 ### What AI tools and models do you use?
 
-We use a variety of AI tools depending on the task, always with human oversight. Our approach is pragmatic—we choose tools based on their effectiveness for specific tasks while maintaining our quality and security standards.
+We use a variety of AI tools depending on the task, always with human oversight.
+
+We prioritize open source agentic editing tools, open protocols, and open APIs to avoid vendor lock-in effects.
+
+We currently don't require the use of openly licensed *models*, but are shifting workloads to open models where feasible.
 
 ### How do you handle dependencies and privacy?
 
@@ -76,7 +80,13 @@ Our approach is designed to be valuable regardless of AI progress. Even with cur
 
 ### What about environmental impact?
 
-Our project is founded on the premise that AI has the potential to make human life more sustainable, not less. We do recognize that compute takes energy. Currently our compute use is negligible (<$100); as it increases, we will invest in an increasing percentage of carbon offsetting for every dollar of compute.
+Our project is founded on the premise that AI has the potential to make human life more sustainable, not less. We do recognize that compute takes energy. Currently our compute use is negligible (<$100); as it increases, we will invest in an increasing percentage in carbon offsetting for every dollar of compute.
+
+We do not use models operated by xAI due to its especially poor [environmental track record](https://insideclimatenews.org/news/17072025/elon-musk-xai-data-center-gas-turbines-memphis/).
+
+## Aren't AI providers heavily subsidizing this stuff and it's actually really expensive to run?
+
+Leading providers [report](https://archive.is/IA9wc) gross margins in the 60% range for access to their most powerful models, and break-even even when training costs are taken into account. Outside special cases (e.g., "sneak previews" of expensive new models), this suggests that looking at individual spend is a reasonable predictor of direct environmental impact.
 
 ## Community and Governance
 
@@ -96,7 +106,7 @@ We believe AI can actually lower barriers to entry by helping with documentation
 
 ### What stage is Permacommons in?
 
-We're in the early experimental phase. We're building our community, establishing best practices, and creating our first tools. 
+We're in the early experimental phase. We're building our community, establishing best practices, and creating our first tools.
 
 ### How can I stay updated on progress?
 

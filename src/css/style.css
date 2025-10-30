@@ -140,10 +140,10 @@ a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 40%, #1a202c 100%);
   color: white;
   text-align: center;
-  padding: 8rem 0 6rem;
+  padding: 7rem 0 8rem;
   margin-top: 4rem;
   position: relative;
   overflow: hidden;
@@ -156,86 +156,132 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  background:
+    radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.05"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.05"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero-logo {
-  height: 5rem;
+  height: 5.5rem;
   width: auto;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  margin-bottom: 1.75rem;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
 }
 
 .hero h1 {
   color: white;
-  margin-bottom: 1rem;
-  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 4.5rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-tagline {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 .hero-description {
   font-size: 1.25rem;
-  margin-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
+  margin-bottom: 3.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  padding: 1rem 2.25rem;
+  border-radius: 0.75rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
   cursor: pointer;
   font-size: 1rem;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
   background: white;
-  color: #3182ce;
+  color: #2d3748;
   border-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
   background: #f7fafc;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
   background: transparent;
   color: white;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: #3182ce;
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Content Sections */
@@ -578,7 +624,7 @@ a:hover {
   }
 
   .hero {
-    padding: 5rem 0 3rem;
+    padding: 6rem 0 4rem;
     margin-top: 3.5rem;
   }
 
@@ -588,25 +634,25 @@ a:hover {
   }
 
   .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
   }
 
   .hero-tagline {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
   }
 
   .hero-description {
     font-size: 1.125rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     padding: 0 1rem;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .btn {
@@ -736,7 +782,7 @@ a:hover {
   }
 
   .hero {
-    padding: 4rem 0 2.5rem;
+    padding: 5rem 0 3rem;
     margin-top: 3rem;
   }
 
@@ -746,18 +792,18 @@ a:hover {
   }
 
   .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .hero-tagline {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .hero-description {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding: 0 0.5rem;
   }
 

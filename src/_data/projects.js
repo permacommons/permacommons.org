@@ -9,6 +9,6 @@ module.exports = [
     "title": "Chabeau",
     "logo": "/images/chabeau.png",
     "blurb": "A feature-packed chatbot interface for the terminal",
-    "url": "https://github.com/premacommons/chabeau"
+    "url": "https://github.com/permacommons/chabeau"
   }
 ];

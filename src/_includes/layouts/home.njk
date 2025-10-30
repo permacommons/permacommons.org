@@ -18,6 +18,17 @@ layout: layouts/base.njk
   </div>
 </section>
 
+<!-- Featured Projects Section -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    {% from "macros/projects.njk" import project_carousel %}
+    {{ project_carousel(projects) }}
+  </div>
+</section>
+
 <!-- Mission Section -->
 <section class="content-section">
   <div class="container">

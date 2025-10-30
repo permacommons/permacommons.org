@@ -1,0 +1,20 @@
+{% macro project_carousel(projects) %}
+  <div class="carousel-container">
+    <div class="carousel-viewport">
+      <div class="project-carousel">
+        {% for project in projects %}
+          <div class="project-card">
+            <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ project.logo }}" alt="{{ project.title }}">
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.blurb }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-timer"></div>
+  </div>
+{% endmacro %}

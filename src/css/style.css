@@ -983,3 +983,117 @@ a:hover {
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
+
+/* Project Carousel */
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project-card {
+  flex: 0 0 100%;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card img {
+  height: 5.5rem;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.project-card p {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a5568;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: white;
+  color: #1a202c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow.prev {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-arrow.next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.carousel-timer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: #3182ce;
+  width: 0;
+}
+
+@keyframes timer {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.no-js .project-carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.no-js .carousel-arrow,
+.no-js .carousel-timer,
+.no-js .carousel-viewport {
+  display: none;
+}

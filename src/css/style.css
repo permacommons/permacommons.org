@@ -1042,8 +1042,8 @@ a:hover {
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(49, 130, 206, 0.3);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.1);
 }
 
 .project-card a {
@@ -1092,10 +1092,9 @@ a:hover {
 
 .carousel-arrow:hover {
   background-color: rgba(255, 255, 255, 0.95);
-  border-color: rgba(49, 130, 206, 0.5);
-  color: rgba(49, 130, 206, 0.9);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-50%) scale(1.05);
+  border-color: rgba(49, 130, 206, 0.6);
+  color: rgba(49, 130, 206, 0.95);
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.15);
 }
 
 .carousel-arrow:focus {

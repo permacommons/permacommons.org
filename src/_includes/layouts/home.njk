@@ -36,15 +36,15 @@ layout: layouts/base.njk
       <h2 class="section-title">Our Mission</h2>
       <p class="section-subtitle">Starting with open source software, we are using AI to grow and nurture a permanent commons.</p>
     </div>
-    
+
     <div class="content-grid">
       <div class="content-card">
         <p>Permacommons is building a permanent home for useful shared resources that are maintained with AI assistance. We are starting with open source software.</p>
-        
+
         <p>Our mission is to create a sustainable ecosystem where the amount of human labor scales with the quality of AI systems—as they improve, human effort decreases, but never at the expense of quality, usability, or security.</p>
-        
+
         <p>Our long-term goal is to sustain compute and human effort through an endowment fund, making the commons truly permanent. But we're taking it one step at a time. The first step is to grow a community that welcomes the responsible use of AI in open source development.</p>
-        
+
         <p>Currently, the best place to follow our work is <a href="https://github.com/permacommons">on GitHub</a>. We are focusing on simple tools and scripts and will work our way up as the technology improves.</p>
       </div>
     </div>
@@ -52,17 +52,32 @@ layout: layouts/base.njk
 </section>
 
 <!-- Vision Section -->
-<section class="content-section vision-section">
+<section class="content-section vision-section reduced-padding">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Our Vision</h2>
       <p class="section-subtitle">To forge possibility into abundance for all humanity.</p>
     </div>
-    
+
     <div class="content-grid">
       <div class="content-card">
-        <h3>Learning Together</h3>
-        <p>Mastery depends on communities of practice. Consider joining us to create lasting value, and to share what we learn along the way.</p>
+        <h3>Latest From Our Blog</h3>
+        <div class="blog-headings">
+          {%- for post in collections.posts -%}
+            {%- if loop.index <= 3 -%}
+          <div class="blog-heading">
+            <h4><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
+            <p class="blog-post-meta">
+              <time datetime="{{ post.date | dateIso }}">{{ post.date | readableDate }}</time>
+              {%- if post.data.author -%}
+              <span>•</span>
+              <span>{{ post.data.author }}</span>
+              {%- endif -%}
+            </p>
+          </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
       </div>
     </div>
   </div>

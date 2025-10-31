@@ -323,6 +323,16 @@ a:hover {
   padding: 6rem 0;
 }
 
+/* Reduced padding for content section */
+.content-section.reduced-padding {
+  padding: 6rem 0;
+}
+
+/* Override section header margin for reduced padding sections */
+.content-section.reduced-padding .section-header {
+  margin-bottom: 8rem;
+}
+
 /* Alternating section background */
 .content-section:nth-child(even) {
   background: #f8fafc;
@@ -379,9 +389,22 @@ a:hover {
   text-align: center;
 }
 
-.vision-section .section-title,
+/* Override vision section title and subtitle to match Mission section */
+.vision-section .section-title {
+  color: #1a202c;
+}
+
 .vision-section .section-subtitle {
-  color: white;
+  color: #718096;
+}
+
+/* Override vision section colors for blog headings */
+.vision-section .content-card {
+  color: #1a202c;
+}
+
+.vision-section .content-card h3 {
+  color: #1a202c;
 }
 
 /* Call-to-action section */
@@ -471,6 +494,48 @@ a:hover {
   gap: 1rem;
   color: #a0aec0;
   font-size: 0.875rem;
+}
+
+/* Blog headings section */
+.blog-headings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.blog-heading {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-heading:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-heading h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.blog-heading h4 a {
+  color: #1a202c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-heading h4 a:hover {
+  color: #3182ce;
+}
+
+.blog-heading .blog-post-meta {
+  color: #718096;
+  font-size: 0.8rem;
+  margin-bottom: 0;
 }
 
 /* ==========================================================================

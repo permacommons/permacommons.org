@@ -80,13 +80,14 @@ Our approach is designed to be valuable regardless of AI progress. Even with cur
 
 ### What about environmental impact?
 
-Our project is founded on the premise that AI has the potential to make human life more sustainable, not less. We do recognize that compute takes energy. Currently our compute use is negligible (<$100); as it increases, we will invest in an increasing percentage in carbon offsetting for every dollar of compute.
+Our project is founded on the premise that AI has the potential to make human life more sustainable, not less. We do recognize that compute takes energy.
+
+As of November 2025, we have made the following contributions to offset carbon impact:
+- November 10, 2025: $120 to [Breath of Fresh Air Guatemala](https://www.cooleffect.org/project/breath-of-fresh-air-guatemala) to construct cookstoves that save wood and time, eliminate toxic smoke, and reduce carbon emissions
+
+As of November 2025, our total spend on compute to-date has been less than $250.
 
 We do not use models operated by xAI due to its especially poor [environmental track record](https://insideclimatenews.org/news/17072025/elon-musk-xai-data-center-gas-turbines-memphis/).
-
-## Aren't AI providers heavily subsidizing this stuff and it's actually really expensive to run?
-
-Leading providers [report](https://archive.is/IA9wc) gross margins in the 60% range for access to their most powerful models, and break-even even when training costs are taken into account. Outside special cases (e.g., "sneak previews" of expensive new models), this suggests that looking at individual spend is a reasonable predictor of direct environmental impact.
 
 ## Community and Governance
 

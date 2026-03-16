@@ -2,6 +2,18 @@
 layout: layouts/faq.njk
 title: Frequently Asked Questions
 description: Common questions about Permacommons and our approach to AI-assisted open source development
+# Wrap each h3 FAQ entry into:
+# <section class="faq-item"><h3>...</h3><div class="faq-answer">...</div></section>
+# This keeps the source as plain Markdown while giving CSS a stable container.
+headingSections:
+  - headingLevel: 3
+    sectionClass: faq-item
+    bodyClass: faq-answer
+    stopHeadingLevels:
+      - 2
+      - 3
+    stopTokenTypes:
+      - hr
 ---
 
 ## About Permacommons

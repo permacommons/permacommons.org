@@ -777,19 +777,30 @@ a:hover {
 }
 
 /* FAQ answer styling */
-.faq-content h3 + p {
+.faq-content .faq-item {
+  margin-bottom: 2rem;
+}
+
+.faq-content .faq-answer {
   margin-top: 0.75rem;
   padding-left: 2.5rem;
   border-left: 4px solid #e2e8f0;
   background: rgba(247, 250, 252, 0.5);
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
   position: relative;
 }
 
+.faq-content .faq-answer > :first-child {
+  margin-top: 0;
+}
+
+.faq-content .faq-answer > :last-child {
+  margin-bottom: 0;
+}
+
 /* FAQ answer label */
-.faq-content h3 + p::before {
+.faq-content .faq-answer::before {
   content: 'A:';
   position: absolute;
   left: -4px;

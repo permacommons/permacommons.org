@@ -6,26 +6,27 @@ layout: layouts/base.njk
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <img src="/images/logo.png" alt="Permacommons" class="hero-logo">
-      <h1>Permacommons</h1>
-      <p class="hero-tagline">Minding the Future</p>
-      <p class="hero-description">Building a permanent home for useful shared resources maintained with AI assistance</p>
-      <div class="hero-buttons">
-        <a href="https://github.com/permacommons" class="btn btn-primary">View on GitHub</a>
-        <a href="/blog/" class="btn btn-secondary">Read Our Blog</a>
+      <span class="overline hero-eyebrow">Permacommons</span>
+      <h1>Minding <em>the future.</em></h1>
+      <p class="hero-description">A permanent home for useful shared resources, maintained with AI assistance and overseen by people.</p>
+      <div class="hero-links">
+        <a href="#projects" class="arrow-link">Explore the projects</a>
+        <a href="/blog/" class="arrow-link">Read our blog</a>
+        <a href="https://github.com/permacommons" class="arrow-link">Follow along on GitHub</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Featured Projects Section -->
-<section class="content-section">
+<section class="content-section" id="projects">
   <div class="container">
     <div class="section-header">
+      <span class="section-number" aria-hidden="true">01</span>
       <h2 class="section-title">Featured Projects</h2>
     </div>
-    {% from "macros/projects.njk" import project_carousel %}
-    {{ project_carousel(projects) }}
+    {% from "macros/projects.njk" import project_list %}
+    {{ project_list(projects) }}
   </div>
 </section>
 
@@ -33,52 +34,45 @@ layout: layouts/base.njk
 <section class="content-section">
   <div class="container">
     <div class="section-header">
+      <span class="section-number" aria-hidden="true">02</span>
       <h2 class="section-title">Our Mission</h2>
-      <p class="section-subtitle">Starting with open source software, we are using AI to grow and nurture a permanent commons.</p>
     </div>
+    <p class="section-subtitle">Starting with open source software, we are using AI to grow and nurture a permanent commons.</p>
 
-    <div class="content-grid">
-      <div class="content-card">
-        <p>Permacommons is building a permanent home for useful shared resources that are maintained with AI assistance. We are starting with open source software.</p>
+    <div class="prose">
+      <p>Permacommons is building a permanent home for useful shared resources that are maintained with AI assistance. We are starting with open source software.</p>
 
-        <p>Our mission is to create a sustainable ecosystem where the amount of human labor scales with the quality of AI systems—as they improve, human effort decreases, but never at the expense of quality, usability, or security.</p>
+      <p>Our mission is to create a sustainable ecosystem where the amount of human labor scales with the quality of AI systems—as they improve, human effort decreases, but never at the expense of quality, usability, or security.</p>
 
-        <p>Our long-term goal is to sustain compute and human effort through an endowment fund, making the commons truly permanent. But we're taking it one step at a time. The first step is to grow a community that welcomes the responsible use of AI in open source development.</p>
+      <p>Our long-term goal is to sustain compute and human effort through an endowment fund, making the commons truly permanent. But we're taking it one step at a time. The first step is to grow a community that welcomes the responsible use of AI in open source development.</p>
 
-        <p>Currently, the best place to follow our work is <a href="https://github.com/permacommons">on GitHub</a>. We are focusing on simple tools and scripts and will work our way up as the technology improves.</p>
-      </div>
+      <p>Currently, the best place to follow our work is <a href="https://github.com/permacommons">on GitHub</a>. We are focusing on simple tools and scripts and will work our way up as the technology improves.</p>
     </div>
   </div>
 </section>
 
-<!-- Vision Section -->
-<section class="content-section vision-section reduced-padding">
+<!-- Blog Section -->
+<section class="content-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Our Vision</h2>
-      <p class="section-subtitle">To forge possibility into abundance for all humanity.</p>
+      <span class="section-number" aria-hidden="true">03</span>
+      <h2 class="section-title">From the Blog</h2>
     </div>
-
-    <div class="content-grid">
-      <div class="content-card">
-        <h3>Latest From Our Blog</h3>
-        <div class="blog-headings">
-          {%- for post in collections.posts -%}
-            {%- if loop.index <= 3 -%}
-          <div class="blog-heading">
-            <h4><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
-            <p class="blog-post-meta">
-              <time datetime="{{ post.date | dateIso }}">{{ post.date | readableDate }}</time>
-              {%- if post.data.author -%}
-              <span>•</span>
-              <span>{{ post.data.author }}</span>
-              {%- endif -%}
-            </p>
-          </div>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
+    <div class="blog-headings">
+      {%- for post in collections.posts -%}
+        {%- if loop.index <= 3 -%}
+      <div class="blog-heading">
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <p class="blog-post-meta">
+          <time datetime="{{ post.date | dateIso }}">{{ post.date | readableDate }}</time>
+          {%- if post.data.author -%}
+          <span>•</span>
+          <span>{{ post.data.author }}</span>
+          {%- endif -%}
+        </p>
       </div>
+        {%- endif -%}
+      {%- endfor -%}
     </div>
   </div>
 </section>
@@ -87,11 +81,10 @@ layout: layouts/base.njk
 <section class="content-section cta-section">
   <div class="container">
     <div class="section-header">
+      <span class="section-number" aria-hidden="true">04</span>
       <h2 class="section-title">For Open Source Developers</h2>
-      <p class="section-subtitle">Are you looking for a community home for your projects that welcomes the responsible use of AI? <a href="https://github.com/orgs/permacommons/discussions/categories/show-and-tell">Tell us about your project!</a></p>
     </div>
-    <div class="text-center">
-      <a href="https://github.com/orgs/permacommons/discussions" class="btn btn-primary">Join Our Community</a>
-    </div>
+    <p class="section-subtitle">Are you looking for a community home for your projects that welcomes the responsible use of AI? <a href="https://github.com/orgs/permacommons/discussions/categories/show-and-tell">Tell us about your project!</a></p>
+    <a href="https://github.com/orgs/permacommons/discussions" class="arrow-link">Join our community</a>
   </div>
 </section>

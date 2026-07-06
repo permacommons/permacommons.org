@@ -7,7 +7,11 @@
     "serve": "eleventy --serve",
     "dev": "eleventy --serve --watch"
   },
-  "keywords": ["eleventy", "permacommons", "static-site"],
+  "keywords": [
+    "eleventy",
+    "permacommons",
+    "static-site"
+  ],
   "author": "Permacommons",
   "license": "CC0-1.0",
   "devDependencies": {

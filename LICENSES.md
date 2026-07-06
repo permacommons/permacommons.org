@@ -20,6 +20,20 @@ This document lists all third-party assets used in the Permacommons website and 
 
 The Inter font is licensed under the SIL Open Font License, Version 1.1. The full license text is available at: https://scripts.sil.org/OFL
 
+### Source Serif 4
+- **Source**: Adobe Fonts / Fontsource (https://github.com/adobe-fonts/source-serif, packaged via https://fontsource.org/fonts/source-serif-4)
+- **License**: SIL Open Font License 1.1
+- **License URL**: https://scripts.sil.org/OFL (full text in `src/fonts/source-serif-4-LICENSE.txt`)
+- **Local Files**:
+  - `src/fonts/source-serif-4-latin-400-normal.woff2` (Regular)
+  - `src/fonts/source-serif-4-latin-400-italic.woff2` (Italic)
+  - `src/fonts/source-serif-4-latin-600-normal.woff2` (SemiBold)
+  - `src/fonts/source-serif-4-latin-700-normal.woff2` (Bold)
+- **Usage**: Display/heading font family and editorial accents
+- **Downloaded**: 2026-07-07 for privacy compliance (avoiding external CDN dependencies)
+
+Copyright 2014-2024 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+
 ## Icons
 
 ### Font Awesome Free

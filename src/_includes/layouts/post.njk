@@ -4,9 +4,9 @@ ogType: article
 ---
 
 <article class="blog-container">
-  <header class="text-center mb-8">
+  <header class="post-header">
     <h1 class="blog-title">{{ title }}</h1>
-    <div class="blog-post-meta" style="justify-content: center; margin-bottom: 2rem;">
+    <div class="blog-post-meta">
       <time datetime="{{ date | dateIso }}">{{ date | readableDate }}</time>
       {%- if author -%}
       <span>•</span>
@@ -17,8 +17,8 @@ ogType: article
     <p class="section-subtitle">{{ description }}</p>
     {%- endif -%}
   </header>
-  
-  <div class="content-card" style="max-width: none;">
+
+  <div class="content-card">
     {{ content | safe }}
   </div>
 </article>

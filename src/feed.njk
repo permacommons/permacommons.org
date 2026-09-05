@@ -14,14 +14,14 @@ eleventyExcludeFromCollections: true
     <name>{{ metadata.author.name or "Permacommons" }}</name>
     <email>{{ metadata.author.email or "info@permacommons.org" }}</email>
   </author>
-  {%- for post in collections.posts | reverse %}
+  {%- for post in collections.posts %}
   {%- set absolutePostUrl %}{{ metadata.url or "https://permacommons.org" }}{{ post.url }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.url or "https://permacommons.org") | escape }}</content>
   </entry>
   {%- endfor %}
 </feed>

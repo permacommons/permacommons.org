@@ -2,10 +2,15 @@
   "name": "permacommons-website",
   "version": "1.0.0",
   "description": "Permacommons website built with Eleventy",
+  "private": true,
+  "engines": {
+    "node": "^22.19.0 || ^24.0.0"
+  },
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "dev": "eleventy --serve --watch"
+    "dev": "eleventy --serve",
+    "test": "node --test"
   },
   "keywords": [
     "eleventy",
@@ -15,6 +20,7 @@
   "author": "Permacommons",
   "license": "CC0-1.0",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-rss": "^3.0.0"
   }
 }

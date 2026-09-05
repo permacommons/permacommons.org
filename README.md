@@ -20,10 +20,11 @@ Permacommons is building a permanent home for useful shared resources that are m
 
 This website is built using modern web technologies with a focus on performance, accessibility, and maintainability:
 
-- **Static Site Generator**: [Eleventy](https://www.11ty.dev/) (v2.0.1)
+- **Static Site Generator**: [Eleventy](https://www.11ty.dev/) (v3.1.6)
 - **Templating**: Nunjucks (.njk files)
 - **Styling**: Custom CSS with locally hosted Inter font family
 - **Build System**: Node.js with npm scripts
+- **Feeds**: Atom feed generated with the official Eleventy RSS plugin
 - **Deployment**: Static files generated to `_site/` directory
 - **Privacy**: No external CDN dependencies - all assets served locally
 
@@ -60,8 +61,10 @@ permacommons.org/
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js 24 LTS (recommended; `.nvmrc` is shared with CI), or Node.js 22.19+
 - npm
+
+If you use nvm, run `nvm install` and `nvm use` in the repository first.
 
 ### Setup
 
@@ -73,7 +76,7 @@ permacommons.org/
 
 2. Install dependencies:
    ```bash
-   npm install
+   npm ci
    ```
 
 3. Start development server:
@@ -86,8 +89,19 @@ permacommons.org/
 ### Build Scripts
 
 - `npm run build` - Build the static site for production
-- `npm run serve` - Serve the built site locally
+- `npm run serve` - Build and serve the site locally with watch mode
 - `npm run dev` - Development server with watch mode
+- `npm test` - Render in memory and check navigation markup, FAQ sections, dates, and feed output
+
+### Dependency Maintenance and CI
+
+Run `npm outdated` and `npm audit` to check dependencies. After updating packages,
+commit both `package.json` and `package-lock.json`, and run `npm run build` and
+`npm test`. Builds use local assets and do not fetch third-party resources.
+
+GitHub Actions builds and tests pull requests. Successful builds on `main` deploy
+to GitHub Pages; deployment permissions are limited to the deploy job. Dependabot
+checks npm dependencies and GitHub Actions monthly.
 
 ### Adding Content
 

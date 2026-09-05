@@ -103,7 +103,10 @@ function wrapHeadingSectionsPlugin(md) {
   });
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = async function(eleventyConfig) {
+  const { default: rssPlugin } = await import("@11ty/eleventy-plugin-rss");
+  eleventyConfig.addPlugin(rssPlugin);
+
   eleventyConfig.amendLibrary("md", mdLib => {
     mdLib.use(wrapHeadingSectionsPlugin);
   });
@@ -122,30 +125,13 @@ module.exports = function(eleventyConfig) {
     return new Date(dateObj).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: 'UTC'
     });
   });
 
   eleventyConfig.addFilter("dateIso", dateObj => {
     return new Date(dateObj).toISOString().split('T')[0];
-  });
-
-  eleventyConfig.addFilter("dateToRfc3339", dateObj => {
-    return new Date(dateObj).toISOString();
-  });
-
-  eleventyConfig.addFilter("getNewestCollectionItemDate", collection => {
-    if (!collection || !collection.length) {
-      return new Date();
-    }
-    return new Date(Math.max(...collection.map(item => {
-      return item.date;
-    })));
-  });
-
-  eleventyConfig.addFilter("htmlToAbsoluteUrls", (htmlContent, base) => {
-    // Simple implementation - in production you might want a more robust solution
-    return htmlContent;
   });
 
   // Get posts collection

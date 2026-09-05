@@ -2,6 +2,26 @@
 
 This document lists all third-party assets used in the Permacommons website and their respective licenses.
 
+## Build Tools
+
+These packages run during development and builds; they are not shipped as browser JavaScript.
+Their transitive dependency versions are recorded in `package-lock.json`, with license
+texts included in the installed packages.
+
+### Eleventy
+- **Source**: https://github.com/11ty/eleventy
+- **Package**: `@11ty/eleventy`, version 3.1.6
+- **License**: MIT
+- **License URL**: https://github.com/11ty/eleventy/blob/v3.1.6/LICENSE
+- **Usage**: Static site generation
+
+### Eleventy RSS Plugin
+- **Source**: https://github.com/11ty/eleventy-plugin-rss
+- **Package**: `@11ty/eleventy-plugin-rss`, version 3.0.0
+- **License**: MIT
+- **License URL**: https://github.com/11ty/eleventy-plugin-rss/blob/v3.0.0/LICENSE
+- **Usage**: Atom feed date filters and HTML URL transforms
+
 ## Fonts
 
 ### Inter Font Family

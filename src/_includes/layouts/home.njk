@@ -6,13 +6,11 @@ layout: layouts/base.njk
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <span class="overline hero-eyebrow">Permacommons</span>
-      <h1>Minding <em>the future.</em></h1>
+      <h1>Permacommons</h1>
+      <p class="hero-tagline">Minding the future.</p>
       <p class="hero-description">A permanent home for useful shared resources, maintained with AI assistance and overseen by people.</p>
       <div class="hero-links">
         <a href="#projects" class="arrow-link">Explore the projects</a>
-        <a href="/blog/" class="arrow-link">Read our blog</a>
-        <a href="https://github.com/permacommons" class="arrow-link">Follow along on GitHub</a>
       </div>
     </div>
   </div>
@@ -22,31 +20,32 @@ layout: layouts/base.njk
 <section class="content-section" id="projects">
   <div class="container">
     <div class="section-header">
-      <span class="section-number" aria-hidden="true">01</span>
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">Shared tools, already taking shape.</h2>
     </div>
     {% from "macros/projects.njk" import project_list %}
-    {{ project_list(projects) }}
+    <div class="projects-layout">
+      {{ project_list(projects) }}
+      <figure class="project-preview">
+        <a href="/images/chabeau-code-preview.png" aria-label="View the full-size Chabeau screenshot">
+          <img src="/images/chabeau-code-preview.png" width="1200" height="800" alt="Chabeau's terminal interface displaying Python, JavaScript, and SQL code with syntax highlighting." loading="lazy" decoding="async">
+        </a>
+        <figcaption><span>Chabeau in use</span> A conversation with code, right in the terminal.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <!-- Mission Section -->
-<section class="content-section">
-  <div class="container">
+<section class="content-section mission-section">
+  <div class="container mission-layout">
     <div class="section-header">
-      <span class="section-number" aria-hidden="true">02</span>
-      <h2 class="section-title">Our Mission</h2>
+      <h2 class="section-title">Built to be shared.<br>Maintained to last.</h2>
     </div>
-    <p class="section-subtitle">Starting with open source software, we are using AI to grow and nurture a permanent commons.</p>
-
     <div class="prose">
-      <p>Permacommons is building a permanent home for useful shared resources that are maintained with AI assistance. We are starting with open source software.</p>
-
-      <p>Our mission is to create a sustainable ecosystem where the amount of human labor scales with the quality of AI systems—as they improve, human effort decreases, but never at the expense of quality, usability, or security.</p>
-
-      <p>Our long-term goal is to sustain compute and human effort through an endowment fund, making the commons truly permanent. But we're taking it one step at a time. The first step is to grow a community that welcomes the responsible use of AI in open source development.</p>
-
-      <p>Currently, the best place to follow our work is <a href="https://github.com/permacommons">on GitHub</a>. We are focusing on simple tools and scripts and will work our way up as the technology improves.</p>
+      <p class="mission-lead">Useful software should have a future beyond the time any one person can give it.</p>
+      <p>We are growing a community that welcomes responsible AI use in open source development. As the tools improve, we aim to reduce the work of maintenance while people remain responsible for quality, usability, and security.</p>
+      <p>Our long-term goal is an endowment that sustains both computing resources and human effort. We are starting with useful software, learning in the open, and building toward a permanent commons.</p>
+      <a class="arrow-link" href="/faq/">Our approach and principles</a>
     </div>
   </div>
 </section>
@@ -55,8 +54,8 @@ layout: layouts/base.njk
 <section class="content-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-number" aria-hidden="true">03</span>
-      <h2 class="section-title">From the Blog</h2>
+      <h2 class="section-title">Notes from the commons</h2>
+      <a href="/blog/" class="section-link">All posts <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
     <div class="blog-headings">
       {%- for post in collections.posts -%}
@@ -65,10 +64,6 @@ layout: layouts/base.njk
         <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
         <p class="blog-post-meta">
           <time datetime="{{ post.date | dateIso }}">{{ post.date | readableDate }}</time>
-          {%- if post.data.author -%}
-          <span>•</span>
-          <span>{{ post.data.author }}</span>
-          {%- endif -%}
         </p>
       </div>
         {%- endif -%}
@@ -81,10 +76,12 @@ layout: layouts/base.njk
 <section class="content-section cta-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-number" aria-hidden="true">04</span>
-      <h2 class="section-title">For Open Source Developers</h2>
+      <h2 class="section-title">There is room for your project.</h2>
     </div>
-    <p class="section-subtitle">Are you looking for a community home for your projects that welcomes the responsible use of AI? <a href="https://github.com/orgs/permacommons/discussions/categories/show-and-tell">Tell us about your project!</a></p>
-    <a href="https://github.com/orgs/permacommons/discussions" class="arrow-link">Join our community</a>
+    <p class="section-subtitle">Bring your tools, ideas, and experience to a community building useful things for everyone.</p>
+    <div class="community-links">
+      <a href="https://github.com/orgs/permacommons/discussions/categories/show-and-tell" class="arrow-link">Share your project</a>
+      <a href="https://github.com/orgs/permacommons/discussions" class="community-secondary">Join the discussion</a>
+    </div>
   </div>
 </section>

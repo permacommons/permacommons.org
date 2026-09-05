@@ -1,13 +1,13 @@
 {% macro project_list(projects) %}
   <div class="project-list">
     {% for project in projects %}
-      <a class="project-row" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
-        <img src="{{ project.logo }}" alt="" aria-hidden="true">
+      <a class="project-row" href="{{ project.url }}">
+        <img src="{{ project.logo }}" width="44" height="44" alt="" aria-hidden="true">
         <div>
           <h3>{{ project.title }}</h3>
           <p>{{ project.blurb }}</p>
         </div>
-        <span class="project-go" aria-hidden="true">→</span>
+        <i class="fas fa-arrow-up-right-from-square project-go" aria-hidden="true"></i>
       </a>
     {% endfor %}
   </div>

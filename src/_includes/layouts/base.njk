@@ -39,8 +39,8 @@
 
     <!-- Additional Meta Tags -->
     <meta name="author" content="Permacommons">
-    <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#161510" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161d1b" media="(prefers-color-scheme: dark)">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://permacommons.org{{ page.url or '/' }}">
     <link rel="alternate" type="application/atom+xml" title="Permacommons Blog Feed" href="/feed.xml">
@@ -54,16 +54,16 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <div class="nav-container">
         <a href="/" class="nav-brand">
-          <img src="/images/logo.png" alt="">
+          <img src="/images/logo.svg" width="400" height="337" alt="">
           <span>Permacommons</span>
         </a>
         <div class="nav-links">
-          <a href="/">Home</a>
-          <a href="/blog/">Blog</a>
-          <a href="/faq/">FAQ</a>
+          <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+          <a href="/blog/"{% if page.url == '/blog/' %} aria-current="page"{% elif ogType == 'article' %} aria-current="location"{% endif %}>Blog</a>
+          <a href="/faq/"{% if page.url == '/faq/' %} aria-current="page"{% endif %}>FAQ</a>
           <a href="https://github.com/permacommons">GitHub</a>
         </div>
       </div>
@@ -80,7 +80,7 @@
         <div class="footer-content">
           <div class="footer-section">
             <h2>Permacommons</h2>
-            <p>Building a permanent home for useful shared resources maintained with AI assistance.</p>
+            <p>A permanent home for shared resources.</p>
           </div>
           <div class="footer-section">
             <h2>Connect</h2>
@@ -88,17 +88,14 @@
               <li><a href="https://github.com/permacommons"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
               <li><a href="https://bsky.app/profile/permacommons.org"><i class="fab fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
               <li><a href="mailto:info@permacommons.org"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
-              <li><a href="/blog/"><i class="fas fa-rss" aria-hidden="true"></i> Blog</a></li>
+              <li><a href="/feed.xml"><i class="fas fa-rss" aria-hidden="true"></i> Feed</a></li>
               <li><a href="https://chat.halecraft.org/signup_user_complete/?id=pqyayc1khpdpugh9hh9y89nkpr&md=link&sbr=su"><i class="fas fa-comments" aria-hidden="true"></i> Mattermost</a></li>
             </ul>
-          </div>
-          <div class="footer-section">
-            <h2>Status</h2>
-            <p>We are just getting started 🤖 🙋</p>
           </div>
         </div>
         <div class="footer-bottom">
           <p>&copy; 2025 Permacommons. Licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.</p>
+          <p>Growing a commons, one project at a time.</p>
         </div>
       </div>
     </footer>

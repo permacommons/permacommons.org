@@ -53,3 +53,12 @@ Font Awesome Free uses multiple licenses:
 - **Code**: MIT License (https://opensource.org/licenses/MIT)
 
 Copyright (c) 2024 Fonticons, Inc. All brand icons are trademarks of their respective owners.
+
+## Project Screenshots
+
+### Chabeau Code Preview
+- **Source**: Existing Permacommons recording, [syntax.mp4](https://permacommons.org/videos/chabeau-0.7.0/syntax.mp4)
+- **Local Source**: `src/videos/chabeau-0.7.0/syntax.mp4`, frame at 7 seconds
+- **Local File**: `src/images/chabeau-code-preview.png`
+- **License**: CC0-1.0, as provided by this repository's `LICENSE`
+- **Usage**: Unmodified frame showing Chabeau in the home page's project section
